@@ -1,6 +1,8 @@
 const jcontainer = document.getElementById("displaydrinks")
 nonalcoholicdrinks()
+
 Alcoholicdrinks()
+
 
 function nonalcoholicdrinks(){
 
@@ -25,6 +27,7 @@ function Alcoholicdrinks(){
 
    Alcoholicdata.drinks.forEach(element => {
     console.log(element);
+    
     alcoholcontainer(element)
    })
   
@@ -33,10 +36,10 @@ function Alcoholicdrinks(){
 //Alcoholicdrinks()
 function alcoholcontainer(alcoholdrink){
     const alcoholbutton = document.getElementById('alcoholbuttonid')
- 
+   
     alcoholbutton.addEventListener('click' , ()=>{
-    
-    
+
+      jcontainer.innerHTML = ""
     const alcoholdrinkname = document.createElement('p')
     alcoholdrinkname.innerText = alcoholdrink.strDrink
     console.log(alcoholdrinkname);
@@ -55,7 +58,7 @@ function nonalcoholcontainer(nonalcoholitem){
  const nonalcoholbutton = document.getElementById('nonalcoholid')
  nonalcoholbutton.addEventListener('click', ()=>{
 
- //  jcontainer.innerHTML = ""
+ jcontainer.innerHTML = ""
   const nonalcoholdrinkname = document.createElement('p')
   nonalcoholdrinkname.innerText = nonalcoholitem.strDrink
   console.log( nonalcoholdrinkname);

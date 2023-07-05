@@ -1,10 +1,28 @@
- .buttons{
+body{
+  background-color: #F4E9CD;
+  background-size: cover;
+  background-image: url(" https://www.wallpapers.net/web/wallpapers/download-lime-mint-water-cocktails-wallpaper-for-desktop-mobiles/3840x2160.jpg");
+}
+
+ 
+#landingpage{
+  display: flex;
+  margin-right: 1000px;
+}
+
+.buttons{
     color: aliceblue;
-    width: 300px;
+    width: 100px;
     height: 50px;
     background-color: rgb(93, 129, 115);
-    margin-right: 40px;
+    margin-top: 400px;
  }
- #buttons{
-   display: flex;
+ #Firstimage{
+  height: 200px;
+  width: 100px;
+  margin-right: 10px;
+ }
+ #landingdetails{
+  display: flex;
+  flex-direction: column;
  }
