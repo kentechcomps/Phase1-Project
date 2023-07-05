@@ -1,6 +1,10 @@
  .buttons{
     color: aliceblue;
-    width: 50px;
+    width: 300px;
     height: 50px;
-    background-color: black;
+    background-color: rgb(93, 129, 115);
+    margin-right: 40px;
+ }
+ #buttons{
+   display: flex;
  }
