@@ -4,26 +4,23 @@ const jcontainer = document.getElementById("displaydrinks")
     fetch ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
     .then (resp => resp.json())
     .then(alcoholicdata =>{
-   console.log(alcoholicdata);
-   
    alcoholicdata.drinks.forEach(element => {
-    console.log(element);
-    alcoholcontaintainer(element)
+   
+    alcoholcontainer(element)
    })
-    .catch(error => {
-        console.error('Error:', error);
+ 
       });
-})
 
+nonalcoholcontaintainerfun()
 //Alcoholicdrinks()
-function alcoholcontaintainer(alcoholdrink){
+function alcoholcontainer(alcoholdrink){
     const alcoholbutton = document.getElementById('alcoholbuttonid')
  
     alcoholbutton.addEventListener('click' , ()=>{
      
     const alcoholdrinkname = document.createElement('p')
     alcoholdrinkname.innerText = alcoholdrink.strDrink
-    console.log(alcoholdrinkname);
+   
     jcontainer.append(alcoholdrinkname)
     
     const alcoholdrinkimg = document.createElement('img')
@@ -32,3 +29,34 @@ function alcoholcontaintainer(alcoholdrink){
     })
     
 }
+function nonalcoholcontaintainerfun(){
+
+
+  fetch ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
+  .then (resp => resp.json())
+  .then(nonalcoholicdata =>{
+ console.log(nonalcoholicdata);
+ 
+ nonalcoholicdata.drinks.forEach(nonalcoldrink => {
+  console.log(nonalcoldrink);
+
+
+
+
+  const nonalcoholbutton = document.getElementById('nonalcoholid')
+
+  nonalcoholbutton.addEventListener('click',()=>{
+
+    const nonalcoholdrinkname = document.createElement('p')
+    nonalcoholdrinkname.innerText = nonalcoldrink.strDrink
+  console.log(nonalcoholdrinkname);
+  jcontainer.append(nonalcoholdrinkname)
+  
+  const nonalcoholdrinkimg = document.createElement('img')
+  nonalcoholdrinkimg.src = nonalcoldrink.strDrinkThumb
+  jcontainer.append(nonalcoholdrinkimg)
+  })  
+ })
+ })
+ 
+  }
