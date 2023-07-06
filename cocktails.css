@@ -9,12 +9,12 @@ body{
 
 
 .Firstimagecontainer{
-  width: 400px;
-  height: 70px;
+  width: 500px;
+  height: 200px;
   position: relative;
   margin: 0 auto;
-  margin-left: 0px;
-  margin-right: 100px;
+  margin-left: 200px;
+ 
   margin-bottom: 40px;
   
 
@@ -35,9 +35,7 @@ body{
   background-color:green ;
   margin-left: 40px;
  }
- #Firstimage{
-  margin-right: 800px;
- }
+
  #landingdetails{
   width: fit-content;
   display: flex;
@@ -102,7 +100,7 @@ object-fit: cover;
   opacity: 1;
 }
 #whatryoulookingfor{
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 100;
   color: #000000;
 }
@@ -144,4 +142,59 @@ object-fit: cover;
 }
 #searchedimg:hover > :not(:hover){
   opacity: 0.2;
+}
+#alcoholicocktaill{
+  display: flex;
+  flex-wrap: wrap;
+}
+#Nonalcoholicocktail{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#nonalcoholcocktailist{
+  list-style-type: none;
+  margin-left: 100px;
+}
+#nonalcoholcocktailist img{
+  height: 150px;
+  width: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#alcoholiclisttem{
+  margin-left: 50px;
+  list-style-type: none;
+}
+#alcoholiclisttem img{
+  height: 150px;
+  width: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#alcoholiclisttem img:not(:last-child){
+  margin-right: 10px;
+}
+#lcoholicocktaill:hover > :not(:hover){
+  opacity: 0.2;
+}
+#alcoholcocktailheading{
+  color: blue;
+  font-size: 40px;
+  font-weight: 100px;
+  text-align: center;
+}
+#nonalcoholcocktailheading{
+  color: blue;
+  font-size: 40px;
+  font-weight: 100px;
+  text-align: center;
+}
+#nonalcoholcocktailist p{
+  font-size: larger;
+  color: #000000;
+  font-weight: bolder;
 }

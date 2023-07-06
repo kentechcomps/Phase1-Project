@@ -2,15 +2,13 @@ const jcontainer = document.getElementById("displaydrinks")
 const nonalcoholcontainer = document.getElementById("Nonalcoholicocktail")
 const alcoholcontainer = document.getElementById("alcoholicocktaill")
 const searchedimgcontainer = document.getElementById("searchedimg")
+
 searchfunction()
 
-nonalcoholicdrinks()
 
 Alcoholicdrinks()
 
-
-
-
+nonalcoholicdrinks()
 
 function searchfunction() {
 const form = document.querySelector('form')
@@ -23,8 +21,9 @@ searchbtn .addEventListener('click' , (e)=>{
     resp.json())
   .then(searchdata =>{
     console.log(searchdata);
+    searchedimgcontainer.innerHTML =''
     searchdata.drinks.forEach(element => {
-
+      
      const seracheddrinkslist = document.createElement('li')
      seracheddrinkslist.id = 'searcheditem'
 
@@ -37,7 +36,7 @@ searchbtn .addEventListener('click' , (e)=>{
       seracheddrinkslist.append(detailname)
       
       searchedimgcontainer.append(seracheddrinkslist)
-
+      
     })
 
 
@@ -54,7 +53,7 @@ function nonalcoholicdrinks(){
 
  Nonalcoholicdata.drinks.forEach(element => {
   
-  nonalcoholcontainer(element)
+  nonalcoholcontainerfunction(element)
  })
 
 })
@@ -68,49 +67,45 @@ function Alcoholicdrinks(){
 
    Alcoholicdata.drinks.forEach(element => {
      
-    alcoholcontainer(element)
+    alcoholcontainerfunction(element)
    })
   
 })
 }
 //Alcoholicdrinks()
-function alcoholcontainer(alcoholdrink){
-    const alcoholbutton = document.getElementById('alcoholbuttonid')
-   
-    alcoholbutton.addEventListener('click' , ()=>{
+function alcoholcontainerfunction(alcoholdrink){
+  
+  const alcoholcocktaillist = document.createElement('li')
+  alcoholcocktaillist.id = 'alcoholiclisttem'
 
-      jcontainer.innerHTML = ""
-    const alcoholdrinkname = document.createElement('p')
-    alcoholdrinkname.innerText = alcoholdrink.strDrink
-    
-    jcontainer.append(alcoholdrinkname)
-    
     const alcoholdrinkimg = document.createElement('img')
     alcoholdrinkimg.src = alcoholdrink.strDrinkThumb
-    jcontainer.append(alcoholdrinkimg)
-    })
+    alcoholcocktaillist.append(alcoholdrinkimg)
+
+    const alcoholdrinkname = document.createElement('p')
+    alcoholdrinkname.innerText = alcoholdrink.strDrink
+    alcoholcocktaillist.append(alcoholdrinkname)
+   
+    alcoholcontainer.append(alcoholcocktaillist)
+
+    }
     
-}
+function nonalcoholcontainerfunction(nonalcoholitem){
 
-function nonalcoholcontainer(nonalcoholitem){
+  const nonalcoholcocktailist =document.createElement('li')
+  nonalcoholcocktailist.id = 'nonalcoholcocktailist'
 
- 
- const nonalcoholbutton = document.getElementById('nonalcoholid')
- nonalcoholbutton.addEventListener('click', ()=>{
-
- jcontainer.innerHTML = ""
-  const nonalcoholdrinkname = document.createElement('p')
-  nonalcoholdrinkname.innerText = nonalcoholitem.strDrink
- 
-  jcontainer.append( nonalcoholdrinkname)
-  
   const nonalcoholdrinkimg = document.createElement('img')
   nonalcoholdrinkimg.src = nonalcoholitem.strDrinkThumb
-  jcontainer.append(nonalcoholdrinkimg)
+  nonalcoholcocktailist.append(nonalcoholdrinkimg)
 
+  const nonalcoholdrinkname = document.createElement('p')
+  nonalcoholdrinkname.innerText = nonalcoholitem.strDrink
+  nonalcoholcocktailist.append( nonalcoholdrinkname)
+
+  nonalcoholcontainer.append( nonalcoholcocktailist)
   
- })
+ }
 
 
-}
 
