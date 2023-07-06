@@ -1,15 +1,56 @@
 const jcontainer = document.getElementById("displaydrinks")
+const nonalcoholcontainer = document.getElementById("Nonalcoholicocktail")
+const alcoholcontainer = document.getElementById("alcoholicocktaill")
+const searchedimgcontainer = document.getElementById("searchedimg")
+searchfunction()
+
 nonalcoholicdrinks()
 
 Alcoholicdrinks()
 
 
+
+
+
+function searchfunction() {
+const form = document.querySelector('form')
+const searchbtn = document.getElementById('searchbutton')
+console.log(searchbtn);
+searchbtn .addEventListener('click' , (e)=>{
+  e.preventDefault()
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${form.search.value}`)
+  .then(resp =>  
+    resp.json())
+  .then(searchdata =>{
+    console.log(searchdata);
+    searchdata.drinks.forEach(element => {
+
+     const seracheddrinkslist = document.createElement('li')
+     seracheddrinkslist.id = 'searcheditem'
+
+      const searchedimg = document.createElement('img')
+      searchedimg.src = element.strDrinkThumb
+      seracheddrinkslist.append(searchedimg)
+
+      const detailname = document.createElement('p')
+      detailname.innerText = element.strDrink
+      seracheddrinkslist.append(detailname)
+      
+      searchedimgcontainer.append(seracheddrinkslist)
+
+    })
+
+
+  })
+
+})
+}
 function nonalcoholicdrinks(){
 
   fetch ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
   .then (resp => resp.json())
   .then(Nonalcoholicdata =>{
- console.log(Nonalcoholicdata);
+
 
  Nonalcoholicdata.drinks.forEach(element => {
   
@@ -26,8 +67,7 @@ function Alcoholicdrinks(){
     .then(Alcoholicdata =>{
 
    Alcoholicdata.drinks.forEach(element => {
-    console.log(element);
-    
+     
     alcoholcontainer(element)
    })
   
@@ -42,7 +82,7 @@ function alcoholcontainer(alcoholdrink){
       jcontainer.innerHTML = ""
     const alcoholdrinkname = document.createElement('p')
     alcoholdrinkname.innerText = alcoholdrink.strDrink
-    console.log(alcoholdrinkname);
+    
     jcontainer.append(alcoholdrinkname)
     
     const alcoholdrinkimg = document.createElement('img')
@@ -61,7 +101,7 @@ function nonalcoholcontainer(nonalcoholitem){
  jcontainer.innerHTML = ""
   const nonalcoholdrinkname = document.createElement('p')
   nonalcoholdrinkname.innerText = nonalcoholitem.strDrink
-  console.log( nonalcoholdrinkname);
+ 
   jcontainer.append( nonalcoholdrinkname)
   
   const nonalcoholdrinkimg = document.createElement('img')

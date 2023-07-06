@@ -9,12 +9,13 @@ body{
 
 
 .Firstimagecontainer{
-  width: 700px;
-  height: 100px;
+  width: 400px;
+  height: 70px;
   position: relative;
   margin: 0 auto;
   margin-left: 0px;
   margin-right: 100px;
+  margin-bottom: 40px;
   
 
 }
@@ -38,8 +39,10 @@ body{
   margin-right: 800px;
  }
  #landingdetails{
+  width: fit-content;
   display: flex;
   flex-direction: column;
+  margin-right: 0px;
  }
  header{
     display: flex;
@@ -120,4 +123,25 @@ object-fit: cover;
 #search{
   width: 230px;
   height: 50px;
+}
+#searchedimg{
+  display: flex;
+  margin-top: 100px;
+}
+#searcheditem{
+  margin-left: 100px;
+  list-style-type: none;
+}
+#searcheditem img{
+  height: 150px;
+  width: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#searcheditem img:not(:last-child){
+  margin-right: 10px;
+}
+#searchedimg:hover > :not(:hover){
+  opacity: 0.2;
 }
