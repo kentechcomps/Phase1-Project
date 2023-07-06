@@ -6,15 +6,21 @@ body{
   width: 100%;
   display: flex;
 }
-
-
+#cocktailp{
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(5, 5, 240);;
+  font-size: x-large;
+  padding: 30px;
+  
+}
 .Firstimagecontainer{
   width: 500px;
-  height: 200px;
+  height: 300px;
   position: relative;
   margin: 0 auto;
   margin-left: 200px;
- 
+ margin-top: 40px;
   margin-bottom: 40px;
   
 
@@ -49,12 +55,18 @@ body{
     height: 8vh;
     width: 100%;
     color: #000000;
-    background-color: #F4E9CD;
+    background-color: #fcc845;
+ }
+ p{
+  font-size: x-large;
+  font-family: 'Roboto Condensed', sans-serif;
  }
  a{
   text-decoration: none;
   color: black;
   font-size: x-large;
+  padding: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
  }
  #nameofstore{
   color: rgb(0, 0, 0);
@@ -91,7 +103,7 @@ object-fit: cover;
 .slidernav a{
   width: 0.5rem;
   height: 0.5rem;
-  border-radius: 50%;
+  border-radius: 400%;
   background-color: #fff;
   opacity: 0.75;
   transition: opacity ease 250ms;
@@ -197,4 +209,24 @@ object-fit: cover;
   font-size: larger;
   color: #000000;
   font-weight: bolder;
+}
+#buydrinkbutton{
+   width: 100px;
+   height: 40px;
+   border: none;
+   color: white;
+   background-color: darkgreen;
+
+}
+#abuydrinkbutton{
+  width: 80px;
+   height: 30px;
+   border: none;
+   color: white;
+   background-color: darkgreen;
+
+}
+#alcoholiclisttem{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-bottom: 10px;
 }

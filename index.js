@@ -1,14 +1,12 @@
-const jcontainer = document.getElementById("displaydrinks")
+
 const nonalcoholcontainer = document.getElementById("Nonalcoholicocktail")
 const alcoholcontainer = document.getElementById("alcoholicocktaill")
 const searchedimgcontainer = document.getElementById("searchedimg")
 
 searchfunction()
-
-
 Alcoholicdrinks()
-
 nonalcoholicdrinks()
+
 
 function searchfunction() {
 const form = document.querySelector('form')
@@ -30,7 +28,24 @@ searchbtn .addEventListener('click' , (e)=>{
       const searchedimg = document.createElement('img')
       searchedimg.src = element.strDrinkThumb
       seracheddrinkslist.append(searchedimg)
+      
+    
+      const price = document.createElement('p')
+      price.id = 'itemsremain'
+      price.innerText = "Click to like"
+      seracheddrinkslist.append(price)
 
+      const buycocktail = document.createElement('button')
+      buycocktail.id = 'buydrinkbutton' 
+      buycocktail.innerText = "Buy drink "
+
+      buycocktail.addEventListener('click' , ()=>{
+      buycocktail.style.backgroundColor = '#ff0000'
+     console.log(itemsremain);
+      })
+
+      seracheddrinkslist.append(buycocktail)
+    
       const detailname = document.createElement('p')
       detailname.innerText = element.strDrink
       seracheddrinkslist.append(detailname)
@@ -81,6 +96,21 @@ function alcoholcontainerfunction(alcoholdrink){
     const alcoholdrinkimg = document.createElement('img')
     alcoholdrinkimg.src = alcoholdrink.strDrinkThumb
     alcoholcocktaillist.append(alcoholdrinkimg)
+
+
+    const aprice = document.createElement('p')
+    aprice.id = 'aitemsremain'
+    aprice.innerText = "Click to like"
+    alcoholcocktaillist.append(aprice)
+
+    const buyacocktail = document.createElement('button')
+    buyacocktail.id = 'abuydrinkbutton' 
+    buyacocktail.innerText = "Buy drink "
+
+    buyacocktail.addEventListener('click' , ()=>{
+      buyacocktail.style.backgroundColor = '#ff0000'
+    })
+    alcoholcocktaillist.append(buyacocktail)
 
     const alcoholdrinkname = document.createElement('p')
     alcoholdrinkname.innerText = alcoholdrink.strDrink
