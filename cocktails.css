@@ -15,16 +15,24 @@ body{
   margin: 0 auto;
   margin-left: 0px;
   margin-right: 100px;
+  
 
 }
 .buttons{
-  display: flex;
-    color: aliceblue;
-    width: 100px;
+   display: flex;
+    color: white;
+    width: 300px;
     height: 50px;
-    background-color: rgb(93, 129, 115);
     margin-top: 40px;
     flex-direction: row;
+    margin-left: 30px;
+ }
+ .singlebuttons{
+  justify-content: space-between;
+  border-radius: 10px;
+  color: white;
+  background-color:green ;
+  margin-left: 40px;
  }
  #Firstimage{
   margin-right: 800px;
@@ -48,7 +56,7 @@ body{
   font-size: x-large;
  }
  #nameofstore{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 100px;
   font-weight: 600px;
  }
@@ -89,4 +97,27 @@ object-fit: cover;
 }
 .slidernav a:hover{
   opacity: 1;
+}
+#whatryoulookingfor{
+  font-size: 60px;
+  font-weight: 100;
+  color: #000000;
+}
+#searchbutton{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3d405b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#search{
+  width: 230px;
+  height: 50px;
 }
