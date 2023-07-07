@@ -10,3 +10,5 @@
 #### Css for the styling 
 #### Javascript for giving it functionality
 
+## Author
+#### Kennedy Mutuku
