@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # Phase1project
 ## Onlinecocktailstore
 
@@ -14,4 +13,4 @@
 
 ## Author
 #### Kennedy Mutuku
->>>>>>> 46d1671942880cb250442aed9810cc699e01a013
+
