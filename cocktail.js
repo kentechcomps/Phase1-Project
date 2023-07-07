@@ -9,6 +9,7 @@ nonalcoholicdrinks()
 
 
 function searchfunction() {
+  
 const form = document.querySelector('form')
 const searchbtn = document.getElementById('searchbutton')
 console.log(searchbtn);
@@ -21,7 +22,7 @@ searchbtn .addEventListener('click' , (e)=>{
     console.log(searchdata);
     searchedimgcontainer.innerHTML =''
     searchdata.drinks.forEach(element => {
-      
+       console.log(element);
      const seracheddrinkslist = document.createElement('li')
      seracheddrinkslist.id = 'searcheditem'
 
@@ -32,7 +33,7 @@ searchbtn .addEventListener('click' , (e)=>{
     
       const price = document.createElement('p')
       price.id = 'itemsremain'
-      price.innerText = "Click to like"
+      price.innerText = "Click to buy"
       seracheddrinkslist.append(price)
 
       const buycocktail = document.createElement('button')
@@ -41,6 +42,7 @@ searchbtn .addEventListener('click' , (e)=>{
 
       buycocktail.addEventListener('click' , ()=>{
       buycocktail.style.backgroundColor = '#ff0000'
+      buycocktail.innerText = "Sold"
      console.log(itemsremain);
       })
 
@@ -64,7 +66,7 @@ function nonalcoholicdrinks(){
   fetch ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
   .then (resp => resp.json())
   .then(Nonalcoholicdata =>{
-
+    
 
  Nonalcoholicdata.drinks.forEach(element => {
   
@@ -109,10 +111,13 @@ function alcoholcontainerfunction(alcoholdrink){
 
     buyacocktail.addEventListener('click' , ()=>{
       buyacocktail.style.backgroundColor = '#ff0000'
+      buyacocktail.innerText = "Sold"
+      alert('Thanks for liking')
     })
     alcoholcocktaillist.append(buyacocktail)
 
     const alcoholdrinkname = document.createElement('p')
+    alcoholdrinkname.id = 'nameofdrink'
     alcoholdrinkname.innerText = alcoholdrink.strDrink
     alcoholcocktaillist.append(alcoholdrinkname)
    
